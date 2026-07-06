@@ -1,0 +1,24 @@
+name = input("IMIE: \n")
+age = int(input("WIEK: \n"))
+sex = input("PłEĆ (WPISZ M LUB K): \n")
+
+
+if (sex.upper() == "K"):
+    czas_do_emerytury = 60-age
+    if (czas_do_emerytury > 10):
+        print(f"{name}, zostało Ci {czas_do_emerytury} lat do emerytury, trochę się naczekasz")
+    if (0 < czas_do_emerytury <= 10):
+        print( f"{name}, zostało Ci {czas_do_emerytury} lat do emerytury, jż niewiele, keep going!")
+    if (czas_do_emerytury <= 0):
+        print("Farciarz, już na wolnym --")
+elif (sex.upper()):
+    czas_do_emerytury = 65-age
+    if (czas_do_emerytury > 10):
+        print(f"{name}, zostało Ci {czas_do_emerytury} lat do emerytury, trochę się naczekasz")
+    if (0 < czas_do_emerytury <= 10):
+        print(f"{name}, zostało Ci {czas_do_emerytury} lat do emerytury, jż niewiele, keep going!")
+    if (czas_do_emerytury <= 0):
+        print("Farciarz, już na wolnym --")
+
+
+
