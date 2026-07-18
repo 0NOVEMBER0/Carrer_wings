@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="uth-8">
+       
+        <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         
         <title>***INWESTYCJA ŻYCIA***</title>
     </head>
     <body>
-        <h1>SPEŁNIJ SWOJE MARZENIE O PIENIĄDZACH</h1>
+        <h1 class="seduction">SPEŁNIJ SWOJE MARZENIE O PIENIĄDZACH</h1>
         <p>Zawsze marzyłeś o inwestowaniu?</p>
         <p>Nasze profesjonalne usługi pomogą Ci spełnić to marzenie.</p>
         <p>Wypełnij tylko formularz, a nasz doświadczony konsultant skontaktuje się z Tobą.</p>
-        <h2>***FORMULARZ***</h2>
+        <h2 class="formularz">***FORMULARZ***</h2>
         <form>
 		    <label for="name">Imię:</label>
-		    <input type="text" id="name" name="np.Katarzyna">
+		    <input type="text" id="name" name="name" placeholder="np.Gabriel" required minlength="3">
             <br>
             <label for="surname">Nazwisko:</label>
-            <input type="text" id="surname" surname="np.Kowalska">
+            <input type="text" id="surname" name="surname" placeholder="np.Nowak" required minlength="3">
             <br>
             <label for="mail">E-mail:</label>:</label>
-            <input type="email" id="mail" mail="np.magda1222@gmail.com">
+            <input type="email" id="mail" name="mail" placeholder="np.gabriel@gmail.com" required>
             <br>
             <label for="phone">Numer telefonu:</label>
-            <input type="tel" id="phone" phone="np.657890675">
+            <input type="tel" id="phone" name="phone" placeholder="np.456789098" required minlength="7">
             <br>
-            <input type="checkbox" id="consent">
-            <label for="consent">Zezwalam na przetwarzanie moich danych osobowych:</label>
+            <input type="checkbox" id="agree" name="agree">
+            <label for="agree">Zezwalam na przetwarzanie moich danych osobowych:</label>
             <br>
-            <button>Wyślij</button>
+            <button type="submit">Wyślij</button>
             
 
 	    </form>
+        
+        <footer>
+            <p>©Wszelkie prawa zastrzeżone</p>
+
+        </footer>
     </body>
 
 
