@@ -1,0 +1,113 @@
+body{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    height: 90 px;
+    background-color: rgb(218, 207, 192);
+    text-align: center;
+}
+
+.formularz {
+    font-size: 20px;
+    align-items: center;
+    max-width: 500px;
+    margin: 40px auto;     
+    padding: 20px;
+    background: white;
+    border-style: groove;
+    border-radius: 10px;
+    border-color: rgb(66, 63, 105);
+    box-shadow: 0 8px 20px rgba(19, 1, 1, 0.2);
+}
+
+.formularz form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.formularz label {
+    font-weight:bold; 
+    margin-bottom: -6px;
+}
+
+input, textarea, select {
+padding: 10px;
+border-radius: 8px;
+border: 1px solid rgb(74, 74, 182);
+font-size: 20px;
+font-family: inherit;
+width: 100%;
+box-sizing: border-box;
+transition: all 0.4s ease;
+}
+
+input:hover, textarea:hover, select:hover {
+border-color:rgb(93, 93, 216);
+}
+
+
+input:focus, textarea:focus, select:focus {
+outline:invert;
+border-color: var( -main-color);
+box-shadow: 0 0 0 3px rgb(24, 144, 184);
+}
+
+
+input:invalid:not(:placeholder-shown) {
+border-color: #ff0019;
+}
+input:valid:not(:placeholder-shown) {
+border-color: #00ff3c;
+}
+
+
+
+input[type="checkbox"]
+{
+    width:auto;
+}
+
+
+.checkbox-group{
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+input[type="checkbox"]:checked,
+accent-color: var( -main-color);
+
+
+button {
+background-color: rgb(24, 144, 184);
+color: white;
+padding: 12px 20px;
+border:powderblue;
+border-radius: 6px;
+cursor:auto;
+transition: background-color 0.3s ease;
+}
+
+
+button:hover {
+background-color: rgb(47, 47, 172);
+}
+
+@media (max-width: 600px) {
+.ai-chat {
+padding: 15px;
+margin: 10px;
+}
+input, textarea, select, button {
+font-size: 14px;
+}
+}
+
+
+footer{
+    text-align: center;
+    color: #130303; ;
+    align-items: center;
+    min-height: 50 px;
+}
