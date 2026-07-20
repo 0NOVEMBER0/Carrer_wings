@@ -91,7 +91,7 @@ transition: background-color 0.3s ease;
 
 
 button:hover {
-background-color: rgb(47, 47, 172);
+background-color: rgb(218, 207, 198);
 }
 
 @media (max-width: 600px) {
