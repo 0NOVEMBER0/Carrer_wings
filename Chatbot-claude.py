@@ -107,7 +107,7 @@ def main():
 
         pytanie_uzytkownika = input("\nTy: ")
 
-        if pytanie_uzytkownika.lower() == "quit":
+        if pytanie_uzytkownika.strip().lower() == "quit":
             print("\nDo zobaczenia!")
             print(f"Zadano {licznik} pytań")
             gadu_gadu_z_chatem()
@@ -130,3 +130,7 @@ def main():
             system_prompt
         )
         print("Claude:", odpowiedz)
+
+
+if __name__ == "__main__":
+    main()
