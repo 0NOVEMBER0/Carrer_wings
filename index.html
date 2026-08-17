@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Mój Chatbot AI </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <main class="container">
+        
+        <h1>Zapytaj AI </h1>
+
+        <form action="/zapytaj" method="POST">
+            <label for="pytanie">"Twoje pytanie: "</label>
+            <textarea name="pytanie" id="pytanie" rows="4"
+            placeholder="Wpisz swoje pytanie ."></textarea>
+
+
+            <label for="odpowiedz">Wybierz styl odpowiedzi:</label>
+            <select id="odpowiedz">
+                    <p>Wybierz styl odpowiedzi</p>
+                    <option value="1">Szczegółowa</option>
+                    <option value="2">Krótka</option>
+                    <option value="3" selected>Domyślna</option>
+            </select>
+
+           <button type="submit">Wyślij </button>
+        
+        </form>
+
+
+        {% if pytanie %}<p><em>Twoje pytanie: {{ pytanie }} </em> </p>{% endif %}
+
+        <div class="answer-box">
+            {% if odpowiedz %}
+                <p>{{ odpowiedz }} </p>
+            {% else %}
+                <p>Tutaj pojawi się odpowiedź AI. </p>
+            {% endif %}
+
+                    
+            
+        </div>
+
+        <div class="licznik">
+            <p>Liczba wysłanych pytań: {{licznik}}</p>
+        </div>
+        
+
+    </main>
+
+</body>
+
+</html>
