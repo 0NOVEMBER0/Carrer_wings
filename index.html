@@ -1,55 +1,49 @@
 <!DOCTYPE html>
+
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
-    <title>Mój Chatbot AI </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analiza danych </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
     <main class="container">
-        
-        <h1>Zapytaj AI </h1>
+        <nav>
+            <a href="/">Zapytaj AI </a> 
+            <a href="/analiza-strona">Analizuj dane </a>
+        </nav>
 
-        <form action="/zapytaj" method="POST">
-            <label for="pytanie">"Twoje pytanie: "</label>
-            <textarea name="pytanie" id="pytanie" rows="4"
-            placeholder="Wpisz swoje pytanie ."></textarea>
+        <h1>Analizuj dane </h1>
+            <form action="/analizuj" method="POST" enctype="multipart/form-data">
+                <input type="file" name="plik_csv" accept=".csv">
+                <button type="submit">Wyślij plik </button>
+            </form>
 
-
-            <label for="odpowiedz">Wybierz styl odpowiedzi:</label>
-            <select id="odpowiedz">
-                    <p>Wybierz styl odpowiedzi</p>
-                    <option value="1">Szczegółowa</option>
-                    <option value="2">Krótka</option>
-                    <option value="3" selected>Domyślna</option>
-            </select>
-
-           <button type="submit">Wyślij </button>
-        
-        </form>
+        {% if blad %}
+            <div class="answer-box">
+                <p><strong>Ups! /strong> {{ blad }} </p>
+            </div>
+        {% endif %}
 
 
-        {% if pytanie %}<p><em>Twoje pytanie: {{ pytanie }} </em> </p>{% endif %}
+        {% if podsumowanie_ai %}
+            <div class="answer-box">
+                <p><strong>Plik </strong> {{ nazwa_pliku }} </p>
+                <p><strong>Wiersze </strong> {{ liczba_wierszy }} &nbsp; <strong>Kolumny:
+    </strong> {{ liczba_kolumn }} </p>
 
-        <div class="answer-box">
-            {% if odpowiedz %}
-                <p>{{ odpowiedz }} </p>
-            {% else %}
-                <p>Tutaj pojawi się odpowiedź AI. </p>
-            {% endif %}
-
-                    
-            
+                <hr>
+                <div id="podsumowanie"> </div>
+                <script src="https: /cdn.jsdelivr.net/npm/marked/marked.min.js"> </script>
+                <script>
+                    document.getElementById("podsumowanie").innerHTML =
+                    marked.parse(`{{ podsumowanie_ai | safe }}`);
+                </script>
         </div>
-
-        <div class="licznik">
-            <p>Liczba wysłanych pytań: {{licznik}}</p>
-        </div>
-        
-
+        {% endif %}
     </main>
-
 </body>
-
 </html>
